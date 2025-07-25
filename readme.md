@@ -59,17 +59,6 @@ This brings up:
 
 ##  Seed Data Overview
 
-For each panel:
-
-Click the three dots (⋮) in the panel's top-right corner
-
-Select Edit
-
-Then immediately click Back
-
- This will force Grafana to refresh the SQL query and pull the data
-
-This step is needed only once after setup or if data sources were reloaded.
 
 | Seed File              | Description                                      |
 |------------------------|--------------------------------------------------|
@@ -119,7 +108,17 @@ Explore your DAG, model descriptions, and test results.
 
 ### Dashboards in Grafana (http://localhost:3000)
 Login: `admin` / `admin`
-DAsboard and authetication are loaded automatically just a little adjustment is required , click edit on each visual by clicking on 3 dots and then just back then teh data will be loaded however its importa all the dbt command shoudl have been executed 
+For each panel:
+
+    Click the three dots (⋮) in the panel's top-right corner
+
+    Select Edit
+
+    Then immediately click Back
+
+    This will force Grafana to refresh the SQL query and pull the data
+
+    This step is needed only once after setup or if data sources were reloaded.
 
 | Report                        | Description                                      | Model/Table              |
 |------------------------------|--------------------------------------------------|---------------------------|

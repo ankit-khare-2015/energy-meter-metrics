@@ -9098,3 +9098,28 @@ with relation as (
 [0m14:31:36.205212 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/usr/app/logs', 'debug': 'False', 'profiles_dir': '/root/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs serve', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
 [0m14:31:36.320462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2d8a6c55-f010-4897-8af5-04f24bdcaa36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffffb761bd0>]}
 [0m14:31:36.378776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2d8a6c55-f010-4897-8af5-04f24bdcaa36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffff9cfa9b0>]}
+[0m14:54:41.048433 [error] [MainThread]: Encountered an error:
+
+[0m14:54:41.062467 [error] [MainThread]: Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 169, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/requires.py", line 245, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/dbt/cli/main.py", line 324, in docs_serve
+    results = task.run()
+  File "/usr/local/lib/python3.10/site-packages/dbt/task/serve.py", line 28, in run
+    httpd.serve_forever()
+  File "/usr/local/lib/python3.10/socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/local/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+[0m14:54:41.071354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffffd4de740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffff9cf93f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffff9cf8c40>]}
+[0m14:54:41.073824 [debug] [MainThread]: Flushing usage events
