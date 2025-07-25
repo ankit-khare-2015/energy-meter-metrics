@@ -1,0 +1,28 @@
+# DBT compiled & build folders
+dbt_packages/
+target/
+logs/
+
+# DBT artifacts
+manifest.json
+run_results.json
+catalog.json
+dbt.log
+
+# Mac/OS system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VSCode or JetBrains IDE config (optional)
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+
+# OS-generated files
+Thumbs.db
