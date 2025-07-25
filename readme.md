@@ -31,7 +31,7 @@ This project is designed as a **learning journey** to help you understand how to
 │   │   └── schema.yml        # Define sources, tests, and descriptions
 │   ├── data/                 # Seed data in CSV form
 │   └── config/profiles.yml   # dbt connection settings
-└── grafana/ (optional)       # Prebuilt dashboards (optional)
+└── grafana/                  # Prebuilt dashboards 
 ```
 
 ---
