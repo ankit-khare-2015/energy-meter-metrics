@@ -69,10 +69,6 @@ These tables are referenced as **sources** in dbt models and form the basis for 
 Run this to load them:
 
 ```bash
-dbt seed
-
-
-```bash
 docker exec -it dbt bash
 cd /usr/app
 dbt seed
