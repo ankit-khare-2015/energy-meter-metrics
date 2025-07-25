@@ -52,7 +52,26 @@ This brings up:
 
 ### 🔍 2. Learn dbt: Core Commands
 
-#### 🧪 Load Raw Data into Postgres
+#### 🧪 Load Raw Data into Postgres (data from /dbt_project/data/* is loaded in postgres database)
+
+## 🌱 Seed Data Overview
+
+The project uses simulated smart meter data loaded via `dbt seed`. These CSV files are located in `dbt_project/data/` and represent the raw input tables in the PostgreSQL database.
+
+| Seed File              | Description                                      |
+|------------------------|--------------------------------------------------|
+| `households.csv`       | Household metadata including city, meter ID, and installation date |
+| `smart_meter_readings.csv` | Hourly readings of energy consumption, voltage, and current from each meter |
+| `tariff_rates.csv`     | Tariff pricing over date ranges (for cost calculation) |
+
+These tables are referenced as **sources** in dbt models and form the basis for all downstream transformations.
+
+Run this to load them:
+
+```bash
+dbt seed
+
+
 ```bash
 docker exec -it dbt bash
 cd /usr/app
