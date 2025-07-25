@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "analytics"."public"."households" ("household_id" integer,"city" text,"meter_id" text,"installation_date" date)
+  ;
+    -- dbt seed --
+    
+          insert into "analytics"."public"."households" ("household_id", "city", "meter_id", "installation_date") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+      
+
+;
+  

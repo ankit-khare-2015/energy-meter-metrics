@@ -1,0 +1,11 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: dbtuser
+      password: dbtpass
+      dbname: analytics
+      schema: public
+      port: 5432

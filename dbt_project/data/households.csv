@@ -1,0 +1,12 @@
+household_id,city,meter_id,installation_date
+1,Cologne,MTR1000,2023-04-10
+2,Frankfurt,MTR1001,2023-12-26
+3,Hamburg,MTR1002,2023-06-01
+4,Frankfurt,MTR1003,2023-05-11
+5,Frankfurt,MTR1004,2023-05-30
+6,Munich,MTR1005,2023-11-05
+7,Hamburg,MTR1006,2023-09-15
+8,Hamburg,MTR1007,2023-12-10
+9,Hamburg,MTR1008,2023-10-21
+10,Frankfurt,MTR1009,2023-07-11
+11,Hannover,MTR1034,2023-07-11

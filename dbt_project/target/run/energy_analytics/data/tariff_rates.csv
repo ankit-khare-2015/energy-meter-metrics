@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "analytics"."public"."tariff_rates" ("rate_id" integer,"start_date" date,"end_date" date,"price_per_kwh" float8)
+  ;
+    -- dbt seed --
+    
+          insert into "analytics"."public"."tariff_rates" ("rate_id", "start_date", "end_date", "price_per_kwh") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s)
+      
+
+;
+  

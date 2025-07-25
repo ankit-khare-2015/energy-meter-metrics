@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      POSTGRES_USER: dbtuser
+      POSTGRES_PASSWORD: dbtpass
+      POSTGRES_DB: analytics
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.7.7
+    container_name: dbt
+    volumes:
+      - ./dbt_project:/usr/app
+      - ./dbt_project/config/profiles.yml:/root/.dbt/profiles.yml
+    working_dir: /usr/app
+    ports:
+      - "8080:8080" 
+    depends_on:
+      - postgres
+    entrypoint: ["tail", "-f", "/dev/null"]
+
+  grafana:
+    image: grafana/grafana-oss
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
+
+volumes:
+  grafana-storage:

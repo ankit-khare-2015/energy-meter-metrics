@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: public
+    tables:
+      - name: households
+      - name: smart_meter_readings
+      - name: tariff_rates
+
+models:
+  - name: stg_households
+    schema: public
+    description: "Cleaned and staged household data"
+    columns:
+      - name: household_id
+        tests: [not_null, unique]
+      - name: meter_id
+        tests: [not_null]
+
+  - name: stg_smart_meter_readings
+    description: "Cleaned smart meter readings"
+    columns:
+      - name: meter_id
+        tests: [not_null]
+      - name: reading_time
+        tests: [not_null]
+
+  - name: fct_daily_energy
+    description: "Aggregated daily energy usage per household"
+
+  - name: fct_energy_cost
+    description: "Daily cost calculated based on tariff rates"
