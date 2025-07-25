@@ -101,6 +101,12 @@ dbt test
 ```bash
 dbt docs generate
 dbt docs serve
+
+Console Output
+>:/usr/app# dbt docs serve
+14:31:36  Running with dbt=1.7.7
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
 ```
 
 > ![Generated Docs](docs/dbt-docs.png)
