@@ -3,11 +3,12 @@
 
 This project is designed as a **learning journey** to help you understand how to build an end-to-end analytics pipeline using **dbt**, **PostgreSQL**, and **Grafana**, using simulated smart meter energy data.
 
+
 > ![Dashboard](docs/report.png)
 
 ---
 
-## 🎯 Learning Goals
+##  Learning Goals
 
 - Understand how dbt works (models, seeds, tests, sources)
 - Practice building transformations from raw data to insights
@@ -17,7 +18,7 @@ This project is designed as a **learning journey** to help you understand how to
 
 ---
 
-## 📦 Project Structure Overview
+##  Project Structure Overview
 
 ```
 .
@@ -35,9 +36,9 @@ This project is designed as a **learning journey** to help you understand how to
 
 ---
 
-## 🚀 Step-by-Step Instructions
+##  Step-by-Step Instructions
 
-### 🐳 1. Start Your Local Stack
+### 1. Start Your Local Stack
 
 ```bash
 docker-compose up -d
@@ -50,13 +51,23 @@ This brings up:
 
 ---
 
-### 🔍 2. Learn dbt: Core Commands
+### 2. Learn dbt: Core Commands
 
-#### 🧪 Load Raw Data into Postgres (data from /dbt_project/data/* is loaded in postgres database)
+####  Load Raw Data into Postgres (data from /dbt_project/data/* is loaded in postgres database)
 
-## 🌱 Seed Data Overview
+##  Seed Data Overview
 
-The project uses simulated smart meter data loaded via `dbt seed`. These CSV files are located in `dbt_project/data/` and represent the raw input tables in the PostgreSQL database.
+For each panel:
+
+Click the three dots (⋮) in the panel's top-right corner
+
+Select Edit
+
+Then immediately click Back
+
+ This will force Grafana to refresh the SQL query and pull the data
+
+This step is needed only once after setup or if data sources were reloaded.
 
 | Seed File              | Description                                      |
 |------------------------|--------------------------------------------------|
@@ -74,12 +85,12 @@ cd /usr/app
 dbt seed
 ```
 
-#### 🧱 Transform Your Data
+####  Transform Your Data
 ```bash
 dbt run
 ```
 
-#### 🛡️ Test Data Quality
+####  Test Data Quality
 ```bash
 dbt test
 ```
@@ -100,6 +111,7 @@ Explore your DAG, model descriptions, and test results.
 
 ### Dashboards in Grafana (http://localhost:3000)
 Login: `admin` / `admin`
+DAsboard and authetication are loaded automatically just a little adjustment is required , click edit on each visual by clicking on 3 dots and then just back then teh data will be loaded however its importa all the dbt command shoudl have been executed 
 
 | Report                        | Description                                      | Model/Table              |
 |------------------------------|--------------------------------------------------|---------------------------|
@@ -111,9 +123,9 @@ Login: `admin` / `admin`
 
 ---
 
-## 🧠 Explore These Concepts
+##  Explore These Concepts
 
-### 📌 dbt Concepts
+###  dbt Concepts
 
 - `seeds`: load CSVs into your warehouse
 - `models`: SQL files that transform data
