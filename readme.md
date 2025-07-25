@@ -35,6 +35,18 @@ This project is designed as a **learning journey** to help you understand how to
 ```
 
 ---
+## 📁 DBT File & Folder Overview
+
+| File/Folder       | Purpose                                 |
+| ----------------- | --------------------------------------- |
+| `dbt_project.yml` | Project config (name, paths, settings)  |
+| `models/`         | Your SQL logic and business rules       |
+| `schema.yml`      | Tests + docs for models and sources     |
+| `data/`           | CSVs for raw/seed data                  |
+| `dbt_packages/`   | Installed packages (ignore in Git)      |
+| `target/`         | Compiled files and logs (ignore in Git) |
+| `profiles.yml`    | DB connection info                      |
+
 
 ##  Step-by-Step Instructions
 
