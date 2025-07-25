@@ -41,6 +41,8 @@ This project is designed as a **learning journey** to help you understand how to
 ### 1. Start Your Local Stack
 
 ```bash
+git clone https://github.com/ankit-khare-2015/energy-meter-metrics.git
+cd energy-meter-metrics
 docker-compose up -d
 ```
 
